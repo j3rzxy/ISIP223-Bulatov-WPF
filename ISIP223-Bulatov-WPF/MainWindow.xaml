@@ -6,7 +6,23 @@
         xmlns:local="clr-namespace:ISIP223_Bulatov_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10" >
+            <TextBox Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}" 
+                    Width="200" Margin="0,0,10,0" />
+            <Button Content="По названию" Command="{Binding SortCommand}" CommandParameter="Title" Margin="0, 0, 5, 0"/>
+            <Button Content="По рейтингу" Command="{Binding SortCommand}" CommandParameter="Rating" Margin="0, 0, 5, 0"/>
+            <Button Content="Вход" Command="{Binding LoginCommand}" Margin="160, 0, 5, 0"/>
+            <Button Content="Регистрация" Command="{Binding RegisterCommand}" Margin="5, 0, 5, 0"/>
+            <Button Content="Личный кабинет" Command="{Binding OpenAccountCommand}" Margin="5, 0, 5, 0"
+                    IsEnabled="{Binding IsUserLoggedIn}" />
+        </StackPanel>
+        
         
     </Grid>
 </Window>

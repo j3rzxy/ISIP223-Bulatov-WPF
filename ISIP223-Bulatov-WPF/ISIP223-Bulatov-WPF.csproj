@@ -71,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CinemaAppDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBCore.cs" />
     <Compile Include="Movies.cs">
       <DependentUpon>CinemaAppDB.tt</DependentUpon>
     </Compile>
